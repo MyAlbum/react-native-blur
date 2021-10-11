@@ -30,7 +30,6 @@
     self.reducedTransparencyFallbackView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.reducedTransparencyFallbackView.frame = frame;
 
-    self.blurAmount = @10;
     self.blurType = @"dark";
     [self updateBlurEffect];
     [self updateFallbackView];
@@ -59,14 +58,6 @@
 {
   if (blurType && ![self.blurType isEqual:blurType]) {
     _blurType = blurType;
-    [self updateBlurEffect];
-  }
-}
-
-- (void)setBlurAmount:(NSNumber *)blurAmount
-{
-  if (blurAmount && ![self.blurAmount isEqualToNumber:blurAmount]) {
-    _blurAmount = blurAmount;
     [self updateBlurEffect];
   }
 }
@@ -128,7 +119,7 @@
 - (void)updateBlurEffect
 {
   UIBlurEffectStyle style = [self blurEffectStyle];
-  self.blurEffect = [BlurEffectWithAmount effectWithStyle:style andBlurAmount:self.blurAmount];
+  self.blurEffect = [BlurEffectWithAmount effectWithStyle:style];
   self.blurEffectView.effect = self.blurEffect;
 }
 

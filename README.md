@@ -96,12 +96,8 @@ import { BlurView, VibrancyView } from "@react-native-community/blur";
     - `thickMaterialLight` - An adaptable blur effect that creates the appearance of a material that is thicker than normal.
     - `thinMaterialLight` - An adaptable blur effect that creates the appearance of a thin material.
     - `ultraThinMaterialLight` - An adaptable blur effect that creates the appearance of an ultra-thin material.
-- `blurAmount` (Default: 10, Number)
-  - `0-100` - Adjusts blur intensity
 - `reducedTransparencyFallbackColor` (Color) (iOS only)
   - `black, white, #rrggbb, etc` - background color to use if accessibility setting ReduceTransparency is enabled
-
-> Note: The maximum `blurAmount` on Android is 32, so higher values will be clamped to 32.
 
 > Complete usage example that works on iOS and Android:
 
@@ -125,7 +121,6 @@ export default class Menu extends Component {
         <BlurView
           style={styles.absolute}
           blurType="light"
-          blurAmount={10}
           reducedTransparencyFallbackColor="white"
         />
         <Text>I'm the non blurred text because I got rendered on top of the BlurView</Text>
@@ -155,7 +150,7 @@ If the [accessibility setting `Reduce Transparency`](https://support.apple.com/g
 
 ### VibrancyView
 
-**Uses the same properties as `BlurView` (`blurType`, `blurAmount`, and `reducedTransparencyFallbackColor`).**
+**Uses the same properties as `BlurView` (`blurType` and `reducedTransparencyFallbackColor`).**
 
 > The vibrancy effect lets the content underneath a blurred view show through more vibrantly
 
@@ -183,7 +178,7 @@ Android uses the [BlurView](https://github.com/Dimezis/BlurView).
 
 If you only need to support iOS, then you can safely ignore these limitations.
 
-In addition to `blurType` and `blurAmount`, Android has some extra props that can be used to override the default behavior (or configure Android-specific behavior):
+In addition to `blurType` Android has some extra props that can be used to override the default behavior (or configure Android-specific behavior):
 
 - `blurRadius` (Number - between 0 and 25) - Manually adjust the blur radius. (Default: matches iOS blurAmount)
 - `downsampleFactor` (Number - between 0 and 25) - Scales down the image before blurring (Default: matches iOS blurAmount)

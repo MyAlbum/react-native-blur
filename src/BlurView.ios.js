@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   View,
@@ -26,7 +26,7 @@ class BlurView extends Component {
 }
 
 const styles = StyleSheet.create({
-  transparent: {backgroundColor: 'transparent'},
+  transparent: { backgroundColor: 'transparent' },
 });
 
 BlurView.propTypes = {
@@ -54,12 +54,10 @@ BlurView.propTypes = {
     'thinMaterialLight',
     'ultraThinMaterialLight',
   ]),
-  blurAmount: PropTypes.number,
 };
 
 BlurView.defaultProps = {
   blurType: 'dark',
-  blurAmount: 10,
 };
 
 const NativeBlurView = requireNativeComponent('BlurView', BlurView);

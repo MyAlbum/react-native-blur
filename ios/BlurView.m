@@ -1,5 +1,4 @@
 #import "BlurView.h"
-#import "BlurEffectWithAmount.h"
 
 @interface BlurView ()
 
@@ -119,7 +118,7 @@
 - (void)updateBlurEffect
 {
   UIBlurEffectStyle style = [self blurEffectStyle];
-  self.blurEffect = [BlurEffectWithAmount effectWithStyle:style];
+  self.blurEffect = [UIBlurEffect effectWithStyle:style];
   self.blurEffectView.effect = self.blurEffect;
 }
 

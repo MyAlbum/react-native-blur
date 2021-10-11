@@ -34,7 +34,6 @@ export type BlurType =
 
 export type BlurViewProps = {
   blurType?: BlurType,
-  blurAmount?: number, // 0 - 100,
   reducedTransparencyFallbackColor?: String,
   style?: ?ViewStyleProp,
 };
@@ -42,7 +41,6 @@ export type BlurViewProps = {
 export class BlurView extends React.Component<BlurViewProps> {
   static defaultProps = {
     blurType: 'dark',
-    blurAmount: 10,
   };
 }
 
@@ -50,6 +48,5 @@ export type VibrancyViewProps = BlurViewProps;
 
 export class VibrancyView extends React.Component<VibrancyViewProps> {
   static defaultProps = {
-    blurAmount: 10,
   };
 }
